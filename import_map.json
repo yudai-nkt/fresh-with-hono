@@ -1,7 +1,7 @@
 {
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.1.3/",
-    "hono": "https://deno.land/x/hono@v3.0.0-rc.15/mod.ts",
+    "hono": "https://deno.land/x/hono@v3.0.1/mod.ts",
     "preact": "https://esm.sh/preact@10.11.0",
     "preact/": "https://esm.sh/preact@10.11.0/",
     "preact-render-to-string": "https://esm.sh/*preact-render-to-string@5.2.4",
