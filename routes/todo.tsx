@@ -1,15 +1,16 @@
 import { Head } from "$fresh/runtime.ts";
 import { Handlers, type PageProps } from "$fresh/server.ts";
-import { hc, type InferResponseType } from "hono";
-import { app } from "./api/[...route].ts";
+import { type InferResponseType } from "hono";
+import { client } from "./api/[...route].ts";
 
-const client = hc<typeof app>("/");
-type ToDoList = InferResponseType<typeof client.api.todo.$get>;
+type ToDoList = InferResponseType<
+  ReturnType<typeof client>["api"]["todo"]["$get"]
+>;
 
 export const handler: Handlers<ToDoList> = {
   GET: async (req, ctx) => {
     const { origin } = new URL(req.url);
-    const { api } = hc<typeof app>(origin);
+    const { api } = client(origin);
     const todo = await api.todo.$get().then((r) => r.json());
     return ctx.render(todo);
   },
