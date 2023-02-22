@@ -6,7 +6,7 @@ import { app } from "./api/[...route].ts";
 const client = hc<typeof app>("/");
 type ToDoList = InferResponseType<typeof client.api.todo.$get>;
 
-export const handler: Handlers = {
+export const handler: Handlers<ToDoList> = {
   GET: async (req, ctx) => {
     const { origin } = new URL(req.url);
     const { api } = hc<typeof app>(origin);
