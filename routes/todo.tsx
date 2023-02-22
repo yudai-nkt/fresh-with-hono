@@ -31,7 +31,7 @@ export default (
           </tr>
         </thead>
         <tbody>
-          {data?.map(({ title, done }) => (
+          {data.map(({ title, done }) => (
             <tr>
               <td>{title}</td>
               <td>
