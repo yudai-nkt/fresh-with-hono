@@ -7,12 +7,16 @@ export default () => {
         <title>Fresh with Hono</title>
       </Head>
       <div>
-        Available API endpoints are the following:
+        Available endpoints are the following:
         <ul>
-          <li>GET <a href="/api/hello">/api/hello</a></li>
-          <li>GET /api/greeting/:name (e.g., <a href="/api/greeting/Alice">/api/greeting/Alice</a>)</li>
+          <li>
+            JSON API: <a href="/api/todo">/api/todo</a>
+          </li>
+          <li>
+            Frontend UI: <a href="/todo">/todo</a>
+          </li>
         </ul>
       </div>
     </>
   );
-}
+};
